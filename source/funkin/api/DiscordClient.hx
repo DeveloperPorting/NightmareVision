@@ -37,7 +37,7 @@ class DiscordClient
 	 * 
 	 * use `changePresence` to change the displayed presence
 	 */
-	public static final discordPresence:DiscordRichPresence = new DiscordRichPresence();
+	public static final discordPresence:DiscordRichPresence = DiscordRichPresence.create();
 	
 	/**
 	 * The string value of the currently connected discord user.

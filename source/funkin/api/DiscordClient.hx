@@ -55,13 +55,13 @@ class DiscordClient
 			close();
 			return;
 		}
-		final discordEventHandlers = new DiscordEventHandlers();
+		final discordEventHandlers = DiscordEventHandlers.create();
 		
 		discordEventHandlers.ready = cpp.Function.fromStaticFunction(onReady);
 		discordEventHandlers.errored = cpp.Function.fromStaticFunction(onError);
 		discordEventHandlers.disconnected = cpp.Function.fromStaticFunction(onDisconnect);
 		
-		Discord.Initialize(rpcId, cpp.RawPointer.addressOf(discordEventHandlers), true, null);
+		Discord.Initialize(rpcId, cpp.RawPointer.addressOf(discordEventHandlers), 1, null);
 		
 		if (thread == null)
 		{

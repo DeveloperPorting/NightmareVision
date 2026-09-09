@@ -42,6 +42,9 @@ jobs:
             libxss-dev libxrender-dev libxrandr-dev libxcursor-dev libxi-dev \
             libxinerama-dev libxxf86vm-dev libgbm-dev libdrm-dev libdecor-0-dev \
             libvulkan-dev pkg-config
+            
+      - name: Authenticate Git for Private Repositories
+        run: git config --global url."https://${{ secrets.ORG_PAT_TOKEN }}@github.com/".insteadOf "git@github.com:"
 
       - name: Prepare Android Lime rebuild
         run: |
@@ -103,6 +106,9 @@ jobs:
         uses: krdlab/setup-haxe@v2.1.0
         with:
           haxe-version: ${{ env.HAXE_VER }}
+          
+      - name: Authenticate Git for Private Repositories
+        run: git config --global url."https://${{ secrets.ORG_PAT_TOKEN }}@github.com/".insteadOf "git@github.com:"
 
       - name: Prepare Windows Lime rebuild
         shell: pwsh
@@ -182,7 +188,7 @@ jobs:
             libvulkan-dev pkg-config
             
       - name: Authenticate Git for Private Repositories
-        run: git config --global url."https://${{ secrets.ORG_PAT_TOKEN }}@github.com/".insteadOf "git@github.com:"   
+        run: git config --global url."https://${{ secrets.ORG_PAT_TOKEN }}@github.com/".insteadOf "git@github.com:"
 
       - name: Prepare Linux Lime rebuild
         run: |

@@ -55,7 +55,8 @@
             },
             {
                 "name": "hxdiscord_rpc",
-                "version": "1.3.0"
+                "link": "git@github.com:FunkinPortingMobile/hxdiscord_rpc-android-support",
+                "branch": "master"
             },
             {
                 "name": "haxeui-flixel",

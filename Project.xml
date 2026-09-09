@@ -62,7 +62,7 @@
     <haxelib name="json5hx"/>
     <haxelib name="android-manager" if="android"/>
 
-    <haxelib name="hxdiscord_rpc" if="DISCORD_ALLOWED" version="1.3.0"/>
+    <haxelib name="hxdiscord_rpc" if="DISCORD_ALLOWED" version="git"/>
     <haxelib name="hxvlc" if="VIDEOS_ALLOWED"/>
 
     <!-- MACROS -->
@@ -142,6 +142,7 @@
 	
 		<android extension="mobile.backend.java.FileUtils" />
 
+        <android target-sdk-version="34" minimum-sdk-version="24" />
 		<certificate path="key.keystore" password="nvport" alias="nvport" alias-password="nvport"/>
     </section>
 
